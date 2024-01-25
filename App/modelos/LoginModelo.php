@@ -8,11 +8,12 @@
             }
 
             public function login($credenciales){
-                $nombre = $credenciales['nombre'];
-                $email = $credenciales['email'];
-                $this->db->query('SELECT * FROM usuarios WHERE nombre=:nombre AND email=:email');
-                $this->db->bind(':nombre',$nombre);
-                $this->db->bind(':email',$email);
+                $correo = $credenciales['correo'];
+                $contrasena = $credenciales['contrasena'];
+                $this->db->query('SELECT * FROM usuario WHERE correo=:correo AND contrasena=:contrasena');
+                $this->db->bind(':correo',$correo);
+                $this->db->bind(':contrasena',$contrasena);
+
                 //return $this->db->rowCount();
                 return $this->db->registro();
 

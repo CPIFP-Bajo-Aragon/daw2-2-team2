@@ -23,7 +23,8 @@ class Core{
             //print_r($url);
 
             } else {
-               // echo 'No existe';
+                echo 'No existe';
+                exit;
 
             }
         }
