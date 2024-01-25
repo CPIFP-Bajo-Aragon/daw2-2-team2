@@ -9,7 +9,8 @@ class Session{
     }
 
     public static function SesionCreada(&$datos = []){ // el & Haze que se apliquen los datos de la sesion;
-     
+
+
         if (isset($_SESSION['UsuarioSesion'])){
             $datos['UsuarioSesion'] = $_SESSION['UsuarioSesion'];
             return true;
@@ -19,7 +20,7 @@ class Session{
     }
 
     public static function IniciarSesion(&$datos = []){ 
-     
+
         if (isset($_SESSION['UsuarioSesion'])){
             $datos['UsuarioSesion'] = $_SESSION['UsuarioSesion'];
             return true;
@@ -30,7 +31,7 @@ class Session{
     }
 
     public static function cerrarSession(){
-    
+
         setcookie(session_name(), "", time(), 3600, "/");
         session_unset();
         session_destroy();

@@ -12,6 +12,7 @@
                 return $this->db->registros();
             }
 
+
             public function datosUsuarios(){
                 $this->db->query("SELECT * FROM usuario");
         
@@ -20,5 +21,5 @@
             }
           
 
-          
+      
     }

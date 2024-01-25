@@ -13,6 +13,7 @@
                 $this->db->query('SELECT * FROM usuario WHERE correo=:correo AND contrasena=:contrasena');
                 $this->db->bind(':correo',$correo);
                 $this->db->bind(':contrasena',$contrasena);
+
                 //return $this->db->rowCount();
                 return $this->db->registro();
 

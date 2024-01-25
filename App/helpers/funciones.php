@@ -5,13 +5,6 @@ function redireccionar($pagina){
     header('location:'.RUTA_URL.$pagina);
 }
 
-function tienePrivilegios($rol_usuario,$rolesPermitidos){
-    // si roles permitiods esta vacio
-    if (empty($rolesPermitidos) || in_array($rol_usuario, $rolesPermitidos)){
-        return true;
-    }
-}
-
 //Cifrado contraseña 
 function shas256($contrasena) {
     $contrasena = hash('sha256', $contrasena);
@@ -28,5 +21,6 @@ function cabecera(){
         require_once RUTA_APP.'/vistas/inc/header_no_logueado.php';
     }
 }
+
 
 

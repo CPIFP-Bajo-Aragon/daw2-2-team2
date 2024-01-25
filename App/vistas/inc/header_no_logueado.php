@@ -14,6 +14,7 @@
 
 </head>
 <!-- <body class="">poner valor min de view port como 100 no lo consigo -->
+
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,7 +24,9 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
+
             <a class="navbar-brand" href="<?php echo RUTA_URL?>/">
+
                 <img src="<?php echo RUTA_URL?>/images/Logo.png" alt="Logo" height="50" class="d-inline-block align-top">
             </a>
                 <ul class="navbar-nav">
@@ -36,6 +39,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Alquileres</a>
                     </li>
+
                     <div class="d-lg-none">
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo RUTA_URL?>login">Login</a>
@@ -46,10 +50,9 @@
                             <a class="nav-link" href="<?php echo RUTA_URL?>registro">Registro</a>
                         </li>
                     </div>
+
                 </ul>
             </div>
-
-
             <!-- ESTO HAY QUE METERLO EN EL DIV DE ARRIVA PARA QUE SE HAGA RESPONSIVE, SI QUEREMOS QUE ESTE EN EL LADO DERECHO HAY QUE HACERLO DE OTRA MANERA -->
             <ul class="navbar-nav md-auto">
                 <li class="nav-item d-none d-md-block">
@@ -57,6 +60,7 @@
                 </li>
                 <li class="nav-item d-none d-md-block">
                     <a class="nav-link" href="<?php echo RUTA_URL?>registro">Registro</a>
+
                 </li>
             </ul>
         </div>
