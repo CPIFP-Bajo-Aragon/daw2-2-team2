@@ -24,7 +24,7 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
             <a class="navbar-brand" href="<?php echo RUTA_URL?>/">
-                <img src="<?php echo RUTA_URL?>/images/Logo.png" alt="Logo" height="50" class="d-inline-block align-top">
+            <img src="<?php echo RUTA_URL_IMAGENES?>Logo.png" alt="Logo" height="50" class="d-inline-block align-top">
             </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -36,6 +36,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Alquileres</a>
                     </li>
+                    <div class="d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo RUTA_URL?>/Notificaciones">Notificaciones</a>
+                        </li>
+                    </div>
                     <div class="d-lg-none">
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo RUTA_URL?>/Miperfil">Mi perfil</a>
@@ -52,13 +57,35 @@
 
             <!-- ESTO HAY QUE METERLO EN EL DIV DE ARRIVA PARA QUE SE HAGA RESPONSIVE, SI QUEREMOS QUE ESTE EN EL LADO DERECHO HAY QUE HACERLO DE OTRA MANERA -->
             <ul class="navbar-nav md-auto">
-            <li class="nav-item d-none d-md-block">
+                <li class="nav-item d-none d-md-block">
+                    <a class="nav-link" href="<?php echo RUTA_URL?>/Notificaciones"><i class="bi bi-bell"></i></a>
+                </li>
+                <!-- <li class="nav-item d-none d-md-block">
                     <a class="nav-link" href="<?php echo RUTA_URL?>/Miperfil">Mi perfil</a>
                 </li>
                 <li class="nav-item d-none d-md-block">
                     <a class="nav-link" href="<?php echo RUTA_URL?>/login/CerrarSesion">Cerrar Sesion</a>
-                </li>
+                </li> -->
             </ul>
+
+            <div class="dropdown">
+                <a class="btn btn-light dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php
+                        echo $_SESSION['UsuarioSesion']->nombre;
+                    ?>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="<?php echo RUTA_URL?>/Miperfil">Mi perfil</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Mis anuncios</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="<?php echo RUTA_URL?>/login/CerrarSesion">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>

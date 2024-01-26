@@ -34,23 +34,27 @@ function cabecera(){
 //Funcion para subir imagenes
 function imagenes($carpeta, $imagen, $nif){
 
-    $uploadDirectory = RUTA_URL_IMAGENES.'/'.$carpeta.'/';
+    $uploadDirectory = RUTAS_PERFIL;
+    $rutaCompleta = $uploadDirectory.$nif.".png";
 
         if (!file_exists($uploadDirectory)) {
             mkdir($uploadDirectory, 0777, true);
         }
 
-        $targetFile = $uploadDirectory . $nif . ".png";
-
-        if (file_exists($targetFile) && empty($_FILES["imagen"])) {
-            unlink($targetFile);
+        if (file_exists($rutaCompleta) && empty($imagen["tmp_name"])) {
+            unlink($rutaCompleta);
         }
 
-        if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $targetFile)) {
+        if (!empty($imagen["tmp_name"])) {
+
+        if (move_uploaded_file($imagen["tmp_name"], $rutaCompleta)) {
             echo "Imagen subida con éxito.";
         } else {
             echo "Error al subir la imagen.";
         }
+    }else{
+        echo "no has seleccionado ninguna imagen";
+    }
 }
 
 

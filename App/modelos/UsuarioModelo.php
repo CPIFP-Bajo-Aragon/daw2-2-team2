@@ -41,7 +41,12 @@
 
             }
 
+            public function NumeroNotificaciones(){
+                $nif = $_SESSION['UsuarioSesion']->NIF;
+                $this->db->query("SELECT * FROM documento WHERE documento.NIF='$nif'");
 
+                return $this->db->registros();
+            }
 
             // public function editarUsuario($datos){
 

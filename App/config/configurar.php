@@ -12,8 +12,9 @@ define ('RUTA_APP', dirname(dirname(__FILE__)));
 //-----------------CAMBIAR ESTO-----------------------------
 
 //define ('RUTA_URL', 'http://localhost/mvc_completo_23-24');
-define ('RUTA_URL', 'http://192.168.4.246');
-define ('RUTA_URL_IMAGENES', RUTA_URL.'/images');
+define ('RUTA_URL', 'http://localhost/');
+define ('RUTA_URL_IMAGENES', RUTA_URL.'/images/');
+define ('RUTAS_PERFIL' , '/var/www/html/public/images/fotoperfil/');
 
 //Nombre del sitio
 define ('NOMBRE_SITIO',  'Web Alquiler y Traspasos Bajo Aragon');

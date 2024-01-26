@@ -1,15 +1,10 @@
 <?php cabecera(); ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <?php
-        //echo ($_SESSION['UsuarioSesion[1]']);
         $nif = $_SESSION['UsuarioSesion']->NIF;
         $nombre = $_SESSION['UsuarioSesion']->nombre;
         $apellido = $_SESSION['UsuarioSesion']->apellido;
         $mail = $_SESSION['UsuarioSesion']->correo;
-        // $nif = "33333333F";
-        // $nombre = "Diego";
-        // $apellido = "Blanco";
-        // $mail = "diegoblancoeperez2004@gmail.com";
     ?>
 <div class="container mt-5">
         <div class="jumbotron text-center">
@@ -21,8 +16,22 @@
         <div class="jumbotron text-center">
         <h2 class="display-6">Mis datos</h2>
         </div>
-        <div class="row">
+<div class="row">
    
+
+        <div class="col-6">
+            <?php
+                if(isset($nif)){
+                    ?>
+                    <img src="<?php echo RUTA_URL_IMAGENES?>/fotoperfil/<?php echo $nif ?>.jpg" class="bd-placeholder-img rounded-circle" width="140">
+                    <?php
+                }else{
+                    ?>
+                    <img src="<?php echo RUTA_URL_IMAGENES?>/fotoperfil/fotoperfil.jpg" class="bd-placeholder-img rounded-circle" width="140">
+                    <?php
+                }
+            ?>
+        </div>
 
     <div class="col-6">
         <p class="lead">Nombre: <?php echo $nombre?></p>
@@ -31,7 +40,7 @@
         <p class="lead">NIF: <?php echo $nif?></p>
     </div>
 </div>
-
+<div class="row">
     <div class="col-6">
         <form action="" method="POST" enctype="multipart/form-data">
         <input name="imagen" id="archivo" type="file"/>
@@ -45,8 +54,7 @@
                 </form>
                 <button class="btn btn-primary">Editar datos</button>
             </div>
-        </div>
-        
+</div>        
 
     <!-- <form action="" method="post" class="card-body">
         <div class="mt-3 mb-3">
@@ -76,7 +84,45 @@
             <h2 class="display-6">Mis documentos</h2>
         </div>
 
-        <div>
+        <!-- INICIO MODAL -->
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Subir archivo</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Subir archivo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-floating mb-3">
+                            <input name="nombre_documento" id="nombre_documento" type="text" class="form-control" id="floatingInput" placeholder="n" required>
+                            <label for="floatingInput">Nombre</label>
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Descripcion:</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div> -->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder=" "></textarea>
+                            <label for="exampleFormControlTextarea1">Descripcion</label>
+                        </div>
+
+                        <label for="formFile" class="form-label">Subir archivos:</label>
+                        <input class="form-control" type="file" name="" id="">
+                        <input type="submit" class="btn btn-secondary mt-3" value="Subir archivo">
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
+        <!-- FIN MODAL -->
+
+        <!-- <div>
             <form action="" method="post">
                 <div class="form-floating mb-3">
                     <input name="nombre_documento" id="nombre_documento" type="text" class="form-control" id="floatingInput" placeholder="n" required>
@@ -84,37 +130,51 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Descripcion:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Quisiera ser una mosca</textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <label for="formFile" class="form-label">Subir archivos:</label>
                 <input class="form-control" type="file" name="" id="">
                 <input type="submit" class="btn btn-secondary" value="Subir archivo">
             </form>
-        </div>
+        </div> -->
 
-        <table class="table mt-3">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Fecha subida</th>
-                    <th>Accion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($datos['documentos'] as $documentos):?>
-                <tr>
-                    <td><?php echo $documentos->nombre?></td>
-                    <td><?php echo $documentos->fecha_carga?></td>
-                    <td>
-                        <form action="<?php echo RUTA_URL?>/Miperfil/eliminardocumentosUsuarios" method="post">
-                            <input type="hidden" value="<?php echo $documentos->id_documento?>" name="id_documento" id="">
-                            <input type="submit" class="btn btn-danger" value="Eliminar">
-                        </form> 
-                    </td>
-                </tr>
-                <?php endforeach ?>
-            </tbody>
-    </table>
+        <?php
+        echo "<br>";
+        if (count($datos['documentos']) === 0) {
+                
+          }else{
+            ?>
+                <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha subida</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($datos['documentos'] as $documentos):?>
+                    <tr>
+                        <td><?php echo $documentos->nombre?></td>
+                        <td><?php echo $documentos->fecha_carga?></td>
+                        <td>
+                            <form action="<?php echo RUTA_URL?>/Miperfil/eliminardocumentosUsuarios" method="post">
+                                <input type="hidden" value="<?php echo $documentos->id_documento?>" name="id_documento" id="">
+                                <input type="submit" class="btn btn-danger" value="Eliminar">
+                            </form> 
+                        </td>
+                    </tr>
+                    <?php endforeach ?>
+                </tbody>
+                </table>
+            <?php
+
+
+
+                //print_r($datos);  
+        }
+        ?>
+        
     
     </div>
         <hr class="mt-4">
