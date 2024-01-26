@@ -3,19 +3,51 @@
     class Miperfil extends Controlador{
 
         public function __construct(){
-
-            //Sesion::iniciarSesion($this->datos);
-
+            session_start();
             $this->UsuarioModelo = $this->modelo('UsuarioModelo');
         }
         
         public function index(){
             
-            //print_r($_SESSION);
+            $this->datos['documentos'] = $this->UsuarioModelo->documentosUsuarios();
+            $this->vista('/Miperfil/perfil', $this->datos);
 
-            $this->datos['usuarios'] = $this->UsuarioModelo->datosUsuarios();
-            
-            $this->vista('Miperfil/perfil', $this->datos);
-
+        
+                $subir = imagenes('fotoperfil', $_FILES['imagen'],  $_SESSION['UsuarioSesion']->NIF);
+ 
+                if ($subir){
+                 echo "Correcto";
+                 exit;
+                }else {
+                 echo 'error';
+                 exit;
+                }
         }
+
+        //eliminar documentos usuarios
+        public function eliminardocumentosUsuarios(){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            
+                $eliminarDocumento = [
+                    'id_documento' => $_POST['id_documento']  
+                ];
+
+                // echo $_POST['id_documento'];
+                // exit;
+                
+                $this->UsuarioModelo->eliminardocumentosUsuarios($eliminarDocumento);
+                redireccionar('/Miperfil');
+
+            }else{
+
+            }
+        }
+
+        //editar perfil usuario
+        public function editarUsuarios(){
+          
+        }
+
+
+
     }

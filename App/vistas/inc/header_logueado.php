@@ -38,12 +38,12 @@
                     </li>
                     <div class="d-lg-none">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo RUTA_URL?>Miperfil">Mi perfil</a>
+                            <a class="nav-link" href="<?php echo RUTA_URL?>/Miperfil">Mi perfil</a>
                         </li>
                     </div>
                     <div class="d-lg-none">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo RUTA_URL?>login/CerrarSesion">Cerrar Sesion</a>
+                            <a class="nav-link" href="<?php echo RUTA_URL?>/login/CerrarSesion">Cerrar Sesion</a>
                         </li>
                     </div>
                 </ul>
@@ -53,10 +53,10 @@
             <!-- ESTO HAY QUE METERLO EN EL DIV DE ARRIVA PARA QUE SE HAGA RESPONSIVE, SI QUEREMOS QUE ESTE EN EL LADO DERECHO HAY QUE HACERLO DE OTRA MANERA -->
             <ul class="navbar-nav md-auto">
             <li class="nav-item d-none d-md-block">
-                    <a class="nav-link" href="<?php echo RUTA_URL?>Miperfil">Mi perfil</a>
+                    <a class="nav-link" href="<?php echo RUTA_URL?>/Miperfil">Mi perfil</a>
                 </li>
                 <li class="nav-item d-none d-md-block">
-                    <a class="nav-link" href="<?php echo RUTA_URL?>login/CerrarSesion">Cerrar Sesion</a>
+                    <a class="nav-link" href="<?php echo RUTA_URL?>/login/CerrarSesion">Cerrar Sesion</a>
                 </li>
             </ul>
         </div>

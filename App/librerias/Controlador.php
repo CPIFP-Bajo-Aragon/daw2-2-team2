@@ -2,6 +2,8 @@
 
 class Controlador{
 
+
+ 
     protected $datos = ['rolesPermitidos' => []];
 
     public function modelo($modelo){
@@ -20,9 +22,7 @@ class Controlador{
         }
     }
 
-
 //Asincrono
-
     public function vistaApi($datos){
         header('Acces-Control-Allow-Origin: *');
         header('Content-Type: application/json');

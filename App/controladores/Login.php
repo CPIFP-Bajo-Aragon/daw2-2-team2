@@ -33,11 +33,11 @@ class Login extends Controlador {
             }
         } else { // si la sesion esta creada no deja entrar a login
             if (Session::SesionCreada()){
-                redireccionar('/');
+                redireccionar('');
             }
             $this->datos['error'] = $error;
           
-            $this->vista('Registro/login', $this->datos);
+            $this->vista('/Registro/login', $this->datos);
         }
 
 

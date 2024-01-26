@@ -1,11 +1,3 @@
-
-<!-- Quitar esto despues de probar -->
-<style>
-    .error {
-      border: 1px solid red;
-    }
-  </style>
-  
 <?php require_once RUTA_APP.'/vistas/inc/header_no_logueado.php'?>
 
 <div class="container mt-5">
@@ -15,7 +7,7 @@
 
         <form action="" class="card p-4" method="post">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control error" id="floatingNombre" placeholder="1234567F" id="nif" name="nif" required>
+                <input type="text" class="form-control" id="floatingNombre" placeholder="1234567F" id="nif" name="nif" required>
                 <label for="floatingNombre">NIF</label>
             </div>
 
@@ -63,5 +55,5 @@
         <?php endif ?>
 
 </div>
-<script src="<?php echo RUTA_URL_JS.'validarRegistro.js'?>"></script>
+<script src="<?php echo RUTA_APP.'/js/validarRegistro.js'?>"></script>
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

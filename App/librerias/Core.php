@@ -25,7 +25,6 @@ class Core{
             } else {
                 echo 'No existe';
                 exit;
-
             }
         }
         require_once '../App/controladores/'.$this->controladorActual.'.php';
