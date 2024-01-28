@@ -4,3 +4,4 @@
 
     //Instaciar la clase Core
     $iniciar= new Core;
+    

@@ -1,7 +1,7 @@
 <?php
 
 class Registro extends Controlador {
-    private $RegistroModelo;
+    //private $usuarioModelo;
 
     public function __construct(){
         $this->RegistroModelo = $this->modelo('RegistroModelo');
@@ -37,7 +37,7 @@ class Registro extends Controlador {
             }
         } else {
             $this->datos['error'] = $error;
-            $this->vista('Registro/registro',$this->datos);  
+            $this->vista('/Registro/registro',$this->datos);  
         }
     }
 }
