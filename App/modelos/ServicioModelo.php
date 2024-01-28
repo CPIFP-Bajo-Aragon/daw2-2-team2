@@ -8,7 +8,11 @@
             }
 
             public function obtenerServicios(){
-                $this->db->query('SELECT * FROM servicios');
+                $this->db->query('SELECT *
+                FROM disponer_servicio
+                NATURAL JOIN municipios
+                NATURAL JOIN servicio
+                GROUP BY municipios.nombre_municipio');
                 return $this->db->registros();
             }
         }
