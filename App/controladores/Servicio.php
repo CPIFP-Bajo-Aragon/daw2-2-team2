@@ -8,6 +8,6 @@ class Servicio extends Controlador {
     }
     public function index(){
         $this->datos['servicios'] = $this->ServicioModelo->obtenerServicios();
-            $this->vista('Servicios/servicios');
+        $this->vista('/Servicios/servicios',$this->datos);
     }
 }

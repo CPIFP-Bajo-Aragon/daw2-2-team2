@@ -1,4 +1,4 @@
-<?php cabecera(); ?>
+<?php cabecera($this->datos); ?>
 
 <div class="mx-auto p-5">
 

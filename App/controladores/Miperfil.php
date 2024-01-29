@@ -5,9 +5,8 @@
         public function __construct(){
             session_start();
             $this->UsuarioModelo = $this->modelo('UsuarioModelo');
+            
         }
-
-
         
         public function index(){
             
@@ -15,7 +14,7 @@
             $this->vista('/Miperfil/perfil', $this->datos);
 
         
-                $subir = imagenes('fotoperfil', $_FILES['imagen'],  $_SESSION['UsuarioSesion']->NIF);
+            $subir = imagenes('fotoperfil', $_FILES['imagen'],  $_SESSION['UsuarioSesion']->NIF);
  
                 if ($subir){
                  echo "Correcto";
@@ -51,23 +50,37 @@
         }
 
 
-        //Notificaciones
 
-        public function Notificaciones($tipo) {
+
+
+        //Notificaciones
+        
+
+        public function Notificaciones() {
+            $this->datos['noti']  = $this->UsuarioModelo->NumeroNotificacionesActivas();
+            $this->vista('/Miperfil/notificaciones');
+            
+        }
+        
+        public function NotificacionesAPI($tipo) {
             if ($tipo === 'Activas') {
                 $this->datos['notificaciones'] = $this->UsuarioModelo->NotificacionesActivas();
             } elseif ($tipo === 'Historico') {
                 $this->datos['notificaciones'] = $this->UsuarioModelo->NotificacioneNoActivas();
             } else {
-                $this->datos['notificaciones'] = [];
+                $this->datos['notificaciones'] = $this->UsuarioModelo->NotificacionesActivas();
             }
         
-            $this->vista('/Miperfil/notificaciones', $this->datos);
+            $this->vistaAPI($this->datos['notificaciones']);
+        }
+
+        public function NotificacionLeida($id){
+            
+            if($_SERVER['REQUEST_METHOD'] == 'GET'){
+                $this->UsuarioModelo-> NotificacionesLeidas($id);
+                redireccionar('/Miperfil/notificaciones');
+            }
         }
         
-        
-        
-        
-
 
     }

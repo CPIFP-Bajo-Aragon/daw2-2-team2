@@ -1,4 +1,4 @@
-<?php require_once RUTA_APP.'/vistas/inc/header_no_logueado.php'?>
+<?php cabecera($this->datos); ?>
 
 <div class="d-flex flex-column min-vh-90">
     <div class="container mt-5">

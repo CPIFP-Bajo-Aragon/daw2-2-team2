@@ -1,4 +1,4 @@
-<?php cabecera(); ?>
+<?php cabecera($this->datos); ?>
 
     <?php
         $nif = $_SESSION['UsuarioSesion']->NIF;
@@ -16,30 +16,34 @@
         <div class="jumbotron text-center">
         <h2 class="display-6">Mis datos</h2>
         </div>
-<div class="row">
+        <div class="row">
    
 
-        <div class="col-6">
-            <?php
-                if(isset($nif)){
-                    ?>
-                    <img src="<?php echo RUTA_URL_IMAGENES?>/fotoperfil/<?php echo $nif ?>.jpg" class="bd-placeholder-img rounded-circle" width="140">
-                    <?php
-                }else{
-                    ?>
-                    <img src="<?php echo RUTA_URL_IMAGENES?>/fotoperfil/fotoperfil.jpg" class="bd-placeholder-img rounded-circle" width="140">
-                    <?php
-                }
-            ?>
-        </div>
+   <div class="col-6">
+       <?php
+       $imagenPrimera = RUTA_URL_IMAGENES . 'fotoperfil/'.$nif.'.jpg';
+       $imagenDefault = RUTA_URL_IMAGENES . 'fotoperfil/fotoperfil.jpg';
+       
+       if (file_exists($imagenPrimera)) {
+           ?>
+           <img src="<?php echo $imagenPrimera ?>" class="bd-placeholder-img rounded-circle" width="140">
+           <?php
+       } else {
+           ?>
+           <img src="<?php echo $imagenDefault ?>" class="bd-placeholder-img rounded-circle" width="140">
+           <?php
+       }
+       ?>
+   </div>
 
-    <div class="col-6">
-        <p class="lead">Nombre: <?php echo $nombre?></p>
-        <p class="lead">Apellidos: <?php echo $apellido?></p>
-        <p class="lead">Email: <?php echo $mail?></p>
-        <p class="lead">NIF: <?php echo $nif?></p>
-    </div>
+<div class="col-6">
+   <p class="lead">Nombre: <?php echo $nombre?></p>
+   <p class="lead">Apellidos: <?php echo $apellido?></p>
+   <p class="lead">Email: <?php echo $mail?></p>
+   <p class="lead">NIF: <?php echo $nif?></p>
 </div>
+</div>
+
 <div class="row">
     <div class="col-6">
         <form action="" method="POST" enctype="multipart/form-data">
@@ -55,6 +59,7 @@
                 <button class="btn btn-primary">Editar datos</button>
             </div>
 </div>        
+        
 
     <!-- <form action="" method="post" class="card-body">
         <div class="mt-3 mb-3">
@@ -75,76 +80,63 @@
         </div>
         <input type="button" value="Editar">
     </form> -->
-
     <div class="container mt-5">
 
-        <hr class="mt-4">
+    <hr class="mt-4">
 
-        <div class="jumbotron text-center">
-            <h2 class="display-6">Mis documentos</h2>
+    <div class="jumbotron text-center">
+        <h2 class="display-6">Mis documentos</h2>
+    </div>
+
+    <!-- INICIO MODAL -->
+
+        <!-- Button trigger modal -->
+        <div class="d-flex justify-content-center align-items-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Subir archivo</button>
         </div>
 
-        <!-- INICIO MODAL -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Subir archivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="form-floating mb-3">
+                        <input name="nombre_documento" id="nombre_documento" type="text" class="form-control" id="floatingInput" placeholder="n" required>
+                        <label for="floatingInput">Nombre</label>
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Descripcion:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div> -->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder=" "></textarea>
+                        <label for="exampleFormControlTextarea1">Descripcion</label>
+                    </div>
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Subir archivo</button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Subir archivo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="post">
-                        <div class="form-floating mb-3">
-                            <input name="nombre_documento" id="nombre_documento" type="text" class="form-control" id="floatingInput" placeholder="n" required>
-                            <label for="floatingInput">Nombre</label>
-                        </div>
-                        <!-- <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Descripcion:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div> -->
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder=" "></textarea>
-                            <label for="exampleFormControlTextarea1">Descripcion</label>
-                        </div>
-
-                        <label for="formFile" class="form-label">Subir archivos:</label>
-                        <input class="form-control" type="file" name="" id="">
-                        <input type="submit" class="btn btn-secondary mt-3" value="Subir archivo">
-                    </form>
-                </div>
-                </div>
+                    <label for="formFile" class="form-label">Subir archivos:</label>
+                    <input class="form-control" type="file" name="" id="">
+                    <input type="submit" class="btn btn-secondary mt-3" value="Subir archivo">
+                </form>
             </div>
             </div>
-        <!-- FIN MODAL -->
+        </div>
+        </div>
+    <!-- FIN MODAL -->
 
-        <!-- <div>
-            <form action="" method="post">
-                <div class="form-floating mb-3">
-                    <input name="nombre_documento" id="nombre_documento" type="text" class="form-control" id="floatingInput" placeholder="n" required>
-                    <label for="floatingInput">Nombre</label>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descripcion:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <label for="formFile" class="form-label">Subir archivos:</label>
-                <input class="form-control" type="file" name="" id="">
-                <input type="submit" class="btn btn-secondary" value="Subir archivo">
-            </form>
-        </div> -->
+    <!-- MOSTRAR DOCUMENTOS(SI ESE USUARIO TIENE) -->
 
         <?php
         echo "<br>";
         if (count($datos['documentos']) === 0) {
                 
-          }else{
+        }else{
             ?>
-                <table class="table mt-3">
+                <table class="table table-striped mt-3">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -168,36 +160,9 @@
                 </tbody>
                 </table>
             <?php
-
-
-
-                //print_r($datos);  
         }
         ?>
-        
-    
     </div>
-        <hr class="mt-4">
-
-        <div class="jumbotron text-center">
-            <h2 class="display-6">Mis anuncios</h2>
-        </div>
-
-   
-
-        <hr class="mt-4">
-
-        <div class="jumbotron text-center">
-            <h2 class="display-6">Me gusta</h2>
-        </div>
-
-    
-
 </div>
 
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

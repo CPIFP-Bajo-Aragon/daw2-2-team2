@@ -1,0 +1,8 @@
+<script>
+    function filtrarServiciosPorMunicipio(nombreMunicipio) {
+        document.querySelectorAll('.municipio-container').forEach(function(container) {
+            container.style.display = 'none';})
+
+        document.getElementById(nombreMunicipio).style.display = 'block';
+    }
+</script>
