@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,11 +24,11 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
             <a class="navbar-brand" href="<?php echo RUTA_URL?>/">
-            <img src="<?php echo RUTA_URL_IMAGENES?>/Logo.png" alt="Logo" height="50" class="d-inline-block align-top">
+            <img src="<?php echo RUTA_URL_IMAGENES?>Logo.png" alt="Logo" height="50" class="d-inline-block align-top">
             </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo RUTA_URL?>/Servicio">Servicios</a>
+                        <a class="nav-link" href="#">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Traspasos</a>
@@ -37,7 +38,7 @@
                     </li>
                     <div class="d-lg-none">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo RUTA_URL?>/Miperfil/Notificaciones">Notificaciones</a>
+                            <a class="nav-link" href="<?php echo RUTA_URL?>/Notificaciones">Notificaciones</a>
                         </li>
                     </div>
                     <div class="d-lg-none">
@@ -57,13 +58,7 @@
             <!-- ESTO HAY QUE METERLO EN EL DIV DE ARRIVA PARA QUE SE HAGA RESPONSIVE, SI QUEREMOS QUE ESTE EN EL LADO DERECHO HAY QUE HACERLO DE OTRA MANERA -->
             <ul class="navbar-nav md-auto">
                 <li class="nav-item d-none d-md-block">
-                    
-            
-                    <a class="nav-link" href="<?php echo RUTA_URL?>/Miperfil/Notificaciones">
-                    <i class="bi bi-bell-fill"></i> <?php echo isset($datos['noti']) ? $datos['noti'] : ''; ?>
-                    </a>
-
-                
+                    <a class="nav-link" href="<?php echo RUTA_URL?>/Notificaciones"><i class="bi bi-bell"></i></a>
                 </li>
                 <!-- <li class="nav-item d-none d-md-block">
                     <a class="nav-link" href="<?php echo RUTA_URL?>/Miperfil">Mi perfil</a>
@@ -84,7 +79,7 @@
                         <a class="dropdown-item" href="<?php echo RUTA_URL?>/Miperfil">Mi perfil</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="<?php echo RUTA_URL?>/Misanuncios">Mis anuncios</a>
+                        <a class="dropdown-item" href="#">Mis anuncios</a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="<?php echo RUTA_URL?>/login/CerrarSesion">Cerrar Sesion</a>
@@ -94,3 +89,4 @@
         </div>
     </nav>
 </header>
+

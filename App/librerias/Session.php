@@ -36,14 +36,4 @@ class Session{
         session_destroy();
         $_SESSION=array();
     }
-
-    public static function agregarDatoSesion($clave, $valor) {
-        if (isset($_SESSION['UsuarioSesion'])) {
-            $_SESSION['UsuarioSesion'][$clave] = $valor;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 }

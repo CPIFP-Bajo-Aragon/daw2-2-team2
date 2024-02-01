@@ -1,4 +1,4 @@
-<?php cabecera($this->datos); ?>
+<?php cabecera(); ?>
 
 <main>
   <!-- CARRUSEL -->

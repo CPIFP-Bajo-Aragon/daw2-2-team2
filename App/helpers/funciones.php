@@ -19,7 +19,7 @@ function shas256($contrasena) {
 }
 
 //Pone la cabecera correspondiente en funcion de si estas registrado o no
-function cabecera($datos){
+function cabecera(){
     if(!isset($_SESSION)) {
         session_start();
     }
@@ -34,14 +34,16 @@ function cabecera($datos){
 //Funcion para subir imagenes
 function imagenes($carpeta, $imagen, $nif){
 
-    $uploadDirectory = RUTA_PERFIL;
+    $uploadDirectory = RUTAS_PERFIL;
     $rutaCompleta = $uploadDirectory.$nif.".png";
 
         if (!file_exists($uploadDirectory)) {
             mkdir($uploadDirectory, 0777, true);
         }
 
-        
+        if (file_exists($rutaCompleta) && empty($imagen["tmp_name"])) {
+            unlink($rutaCompleta);
+        }
 
         if (!empty($imagen["tmp_name"])) {
 

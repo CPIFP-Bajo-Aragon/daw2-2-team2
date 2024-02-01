@@ -1,24 +1,34 @@
-<?php cabecera($this->datos); ?>
-<div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-pills card-header-pills">
-      <li class="nav-item">
-        <button id="activas" class="nav-link active" onclick="NotificacionesAPI('Activas')">Activas</button>
-      </li>
-      <li class="nav-item">
-        <button id="historico" class="nav-link" onclick="NotificacionesAPI('Historico')">Historico</button>
-      </li>
-    </ul>
-  </div>
-    <div class="card-body"  id="contenido">
-        
-    </div>
-  </div>
-</div>
-<script>
-		window.onload=function() {
-      NotificacionesAPI('Activas')		
-  }
-		</script>
-<script src="<?php echo RUTA_URL?>/js/AsincronoNotificaciones.js"></script>
+<?php cabecera(); ?>
+<div class></div>
+<h1 class="text-center">Notificaciones</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 <?php require_once RUTA_APP.'/vistas/inc/footer.php'?>

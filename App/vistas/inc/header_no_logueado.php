@@ -24,11 +24,11 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
             <a class="navbar-brand" href="<?php echo RUTA_URL?>">
-                <img src="<?php echo RUTA_URL?>/images/Logo.png" alt="Logo" height="50" class="d-inline-block align-top">
+                <img src="<?php echo RUTA_URL_IMAGENES?>Logo.png" alt="Logo" height="50" class="d-inline-block align-top">
             </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo RUTA_URL?>/Servicio">Servicios</a>
+                        <a class="nav-link" href="#">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Traspasos</a>
@@ -36,6 +36,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Alquileres</a>
                     </li>
+                    <p>Servidor de Oscar</p>
                     <div class="d-lg-none">
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo RUTA_URL?>/login">Login</a>

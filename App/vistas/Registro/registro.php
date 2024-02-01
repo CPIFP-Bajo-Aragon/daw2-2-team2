@@ -1,4 +1,4 @@
-<?php cabecera($this->datos); ?>
+<?php require_once RUTA_APP.'/vistas/inc/header_no_logueado.php'?>
 
 <div class="container mt-5">
         <div class="jumbotron text-center">
