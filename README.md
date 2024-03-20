@@ -66,7 +66,7 @@ Si deseas contribuir a este proyecto, por favor consulta nuestras pautas de cont
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo LICENSE.
+Este proyecto está bajo la Licencia MIT.
 
 ## Contacto
 
