@@ -43,8 +43,8 @@ La Comarca del Bajo Aragón ostenta la presidencia de la Red ARCE (Red Aragonesa
 
 ## Capturas de Pantalla
 
-![Captura de pantalla 1](https://i.ibb.co/MsQPXwq/screenshot1.png)
-![Captura de pantalla 2](https://i.ibb.co/4Rz8wD2/screenshot2.png)
+![Captura de pantalla 1](https://i.ibb.co/drxkhCn/Captura-de-pantalla-2024-03-18-232447.png)
+![Captura de pantalla 2](https://i.ibb.co/Dfh9P6Y/Captura-de-pantalla-2024-03-18-204803.png)
 
 ## Requisitos de Desarrollo
 
