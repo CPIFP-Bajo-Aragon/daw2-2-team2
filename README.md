@@ -1,6 +1,6 @@
 # Plataforma de Gestión de Viviendas y Negocios para la Comarca del Bajo Aragón
 
-![Captura de pantalla de la aplicación](https://i.ibb.co/6BTWKsG/screenshot.png)
+![Captura de pantalla de la aplicación](https://i.ibb.co/X8KCnJ6/Captura-de-pantalla-2024-03-20-140907.png)
 
 Este repositorio contiene el código fuente y la documentación para la Plataforma de Gestión de Viviendas y Negocios desarrollada para la Comarca del Bajo Aragón. Esta plataforma tiene como objetivo centralizar la información sobre viviendas disponibles, negocios en traspaso y otros servicios disponibles en la comarca, con el propósito de fomentar el emprendimiento y combatir la despoblación en la región.
 
