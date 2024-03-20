@@ -37,23 +37,22 @@ La Comarca del Bajo Aragón ostenta la presidencia de la Red ARCE (Red Aragonesa
 
 ## Contribuidores
 
-- @oscarr36
-- @ivantorres2840
-- @DiegoBlanco04
+- [@oscarr36](https://github.com/oscarr36)
+- [@ivantorres2840](https://github.com/ivantorres2840)
+- [@DiegoBlanco04](https://github.com/DiegoBlanco04)
 
 ## Capturas de Pantalla
 
-![Captura de pantalla 1](https://ruta-a-la-imagen-1.jpg)
-![Captura de pantalla 2](https://ruta-a-la-imagen-2.jpg)
+![Captura de pantalla 1](https://i.ibb.co/MsQPXwq/screenshot1.png)
+![Captura de pantalla 2](https://i.ibb.co/4Rz8wD2/screenshot2.png)
 
 ## Requisitos de Desarrollo
 
-- Node.js
-- React
-- MongoDB
-- Express
-- Otros requisitos...
-
+- Nginx
+- Php
+- MariaDB
+- Phpmyadmin
+  
 ## Instalación y Uso
 
 1. Clona este repositorio.
@@ -72,4 +71,3 @@ Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archiv
 ## Contacto
 
 Para más información, contáctanos en [protechbajoaragon@gmail.com](mailto:protechbajoaragon@gmail.com) o visita nuestra página web [oscarr36.github.io/Pagina_EIE_Profitech/](https://oscarr36.github.io/Pagina_EIE_Profitech/).
-
